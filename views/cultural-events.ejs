@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/css/event.css">
+<style>
+    .anime {
+        filter: drop-shadow(6px 6px 6px black);
+        position: relative;
+        animation: mymove 1.5s infinite;
+    }
+
+    @keyframes mymove {
+        33% {
+            top: 0px;
+        }
+
+        66% {
+            top: 20px;
+        }
+
+        100% {
+            top: 0px;
+        }
+    }
+</style>
+<div id="page1">
+    <nav>
+        <a href="/"><img
+            class="magnet"
+            src="/assets/img/Shrujan final1.png"
+            width="120"
+            alt="shrujan logo"
+          />
+        </a>
+        <div id="nav-part2">
+          <h4><a class="magnet" href="/">Home</a></h4>
+          <h4><a class="magnet" href="#">Team</a></h4>
+          <h4><a class="magnet" href="#">Contact</a></h4>
+        </div>
+        <h3 style="color: #fff; filter: drop-shadow(1px 1px 1px black);"><i class="ri-menu-fill" style="padding-right: 10px;"></i></i>Menu</h3>
+    </nav>
+
+      <div id="page3">
+
+        <div class="child anime" id="child1">
+            <img src="/assets/img/group.png" style="filter: drop-shadow(5px 5px #fff); background-color: rgba(255, 255, 255, 0.075); background-color: rgba(255, 255, 255, 0.20); border-radius: 30px;
+            border: 2px solid pink;"
+                alt="" loading="lazy">
+            <div class="actions">
+                <button>GROUP EVENTS</button>
+                <a href="/events/cultural/group">Register HERE</a>
+            </div>
+        </div>
+
+        <div class="child anime" id="child2">
+            <img src="/assets/img/single.png" style="filter: drop-shadow(5px 5px #fff); background-color: rgba(255, 255, 255, 0.075); background-color: rgba(255, 255, 255, 0.20); border-radius: 30px;
+            border: 2px solid pink;"
+                alt="" loading="lazy">
+            <div class="actions">
+                <button>SOLO EVENTS</button>
+                <a href="/events/cultural/solo">Register HERE</a>
+
+            </div>
+
+        </div>
+        <div class="child anime" id="child3">
+            <img src="/assets/img/duo.png" style="filter: drop-shadow(5px 5px #fff); background-color: rgba(255, 255, 255, 0.075); background-color: rgba(255, 255, 255, 0.20); border-radius: 30px;
+            border: 2px solid pink;"
+                alt="" loading="lazy">
+            <div class="actions">
+                <button>DUO EVENTS</button>
+                <a href="/events/cultural/duo">Register HERE</a>
+            </div>
+
+        </div>
+        <!-- <div class="child" id="child4">
+            <img src="/assets/img/swim.png" loading="lazy" style="filter: drop-shadow(5px 5px #fff); background-color: rgba(255, 255, 255, 0.075); background-color: rgba(255, 255, 255, 0.20); border-radius: 30px;
+            border: 2px solid pink;"
+                alt="">
+            <div class="actions">
+                <button>CATAGORY EVENTS</button>
+                <a href="">Register HERE</a>
+            </div>
+
+        </div> -->
+    </div>
+</div>
+<script src="/js/event.js"></script>

@@ -1,0 +1,53 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+    .dog-404 {
+        filter: drop-shadow(6px 6px 6px black);
+        position: relative;
+        animation: mymove 2.5s infinite;
+    }
+
+    @keyframes mymove {
+        33% {
+            top: 0px;
+        }
+
+        66% {
+            top: 20px;
+        }
+
+        100% {
+            top: 0px;
+        }
+    }
+</style>
+
+
+<div id="page1">
+    <nav>
+        <a href="/"><img class="magnet" src="/assets/img/Shrujan final1.png" width="160" alt="shrujan logo" />
+        </a>
+        <div id="nav-part2">
+            <h4><a class="magnet" href="/">Home</a></h4>
+            <h4><a class="magnet" href="/team">Team</a></h4>
+            <h4><a class="magnet" href="#">Contact</a></h4>
+        </div>
+        <h3 style="color: #fff; filter: drop-shadow(1px 1px 1px black);"><i class="ri-menu-fill"
+                style="padding-right: 10px;"></i></i>Menu</h3>
+    </nav>
+
+    <!-- This is an example component -->
+    <div class="h-screen w-screen bg-gray-100 flex items-center" style="background: none;">
+        <div class="container flex flex-col md:flex-row items-center justify-center px-5 text-gray-700">
+            <div class="max-w-md" style="-webkit-text-stroke: 1px white; filter: drop-shadow(6px 6px 6px black);">
+                <div class="text-7xl font-dark font-bold" >404 Error</div>
+                <p class="text-2xl md:text-3xl font-light leading-normal">Sorry we couldn't find this page. </p>
+            </div>
+
+            <div class="max-w-lg">
+                <img class="dog-404" src="/assets/img/char2.png">
+            </div>
+
+        </div>
+    </div>
+</div>

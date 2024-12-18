@@ -1,0 +1,114 @@
+<style>
+   /* Add these styles to your existing CSS file */
+
+#registration-details {
+  margin-top: 50px; /* Adjust as needed for spacing */
+}
+
+h2 {
+  font-size: 30px;
+  color: #2c0048;; /* Adjust the color as needed */
+  margin-bottom: 10px;
+}
+
+#registrations {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px; /* Adjust as needed for spacing */
+}
+
+#registrations th, #registrations td {
+  padding: 10px;
+  border: 1px solid #54127f; /* Adjust the color as needed */
+}
+
+#registrations th {
+  /* background-color: #d20a84;  Adjust the color as needed */
+  background-color: #D04848; /* Adjust the color as needed */
+  color: white;
+}
+
+#registrations tbody tr:nth-child(even) {
+  background-color: #f8f4ec; /* Adjust the color as needed */
+}
+
+#registrations tbody tr:hover {
+  background-color: #D04848; /* Adjust the color as needed */
+  color: white;
+}
+
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    #registration-details {
+        padding: 10px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    #registrations {
+        width: 100%;
+    }
+
+    #registrations th, #registrations td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+</style>
+<div id="page1">
+    <nav>
+        <a href="/"><img
+            class="magnet"
+            src="/assets/img/Shrujan final1.png"
+            width="120"
+            alt="shrujan logo"
+          />
+        </a>
+        <div id="nav-part2">
+          <h4><a class="magnet" href="/">Home</a></h4>
+          <h4><a class="magnet" href="#">Team</a></h4>
+          <h4><a class="magnet" href="#">Contact</a></h4>
+        </div>
+        <h3 style="color: #fff; filter: drop-shadow(1px 1px 1px black);"><i class="ri-menu-fill" style="padding-right: 10px;"></i></i>Menu</h3>
+    </nav>
+
+    <% if (myEvents && myEvents.length > 0) { %>
+        <!-- Display details if there are matched registrations -->
+        <h2 id="registration-details">Registration Details:</h2>
+        Total Registrations: <strong><%= totalRegistrations %></strong>
+        <% if (tableHeaders && myEvents) { %>
+            <table id="registrations" border="1">
+                <thead>
+                    <tr>
+                        <th>Sl. No.</th>
+                        <% tableHeaders
+                            .filter(header => !header.startsWith('_'))
+                            .forEach(header => { %>
+                            <th><%= header %></th>
+                        <% }); %>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% myEvents.forEach((event, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <% tableHeaders
+                                .filter(header => !header.startsWith('_'))
+                                .forEach(header => { %>
+                                    <td><%= event[header] %></td>
+                            <% }); %>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No table data available.</p>
+        <% } %>
+    <% } else { %>
+        <!-- Display not found message if there are no matches -->
+        <p>No matching registrations found.</p>
+    <% } %>
+</div>

@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="/css/team.css">
+
+<div id="page1">
+    <nav>
+        <a href="/"><img class="magnet" src="/assets/img/Shrujan final1.png" width="160" alt="shrujan logo" />
+        </a>
+        <div id="nav-part2">
+            <h4><a class="magnet" href="/">Home</a></h4>
+            <h4><a class="magnet" href="#">Team</a></h4>
+            <h4><a class="magnet" href="#">Contact</a></h4>
+        </div>
+        <h3 style="color: #fff; filter: drop-shadow(1px 1px 1px black);"><i class="ri-menu-fill"
+                style="padding-right: 10px;"></i></i>Menu</h3>
+    </nav>
+
+
+    <div class="team-container">
+        <div class="large-container">
+            <div class="image-change">
+                <img src="/assets/img/team/team main.jpg" alt="">
+                <div class="details">
+                    <h1>Our Team</h1>
+                    <h2>We Made it.</h2>
+                </div>
+            </div>
+        </div>
+
+        
+            <div class="image-gallary">
+                <img src="/assets/img/team/team (1).png" alt="" data-name="Ayush Sharma" data-bio="Developer and Security">
+                <img src="/assets/img/team/team (7).png" alt="" data-name="Sushant Kumar Bishoi" data-bio="Developer">
+                <img src="/assets/img/team/team (4).png" alt="" data-name="Vivek Saha" data-bio="Developer">
+                <img src="/assets/img/team/team (2).png" alt="" data-name="Naimish kumar sahu" data-bio="Developer">
+                <img src="/assets/img/team/team (5).png" alt="" data-name="Ankit Choudhury" data-bio="Developer">
+                <img src="/assets/img/team/team (6).png" alt="" data-name="shashwat tripathy" data-bio="Developer">
+                <img src="/assets/img/team/team (3).png" alt="" data-name="Sourav Mund" data-bio="Co-ordinator">
+                <img src="/assets/img/team/team (8).png" alt="" data-name="Sujit Patro" data-bio="Faculty Incharger">
+                <img src="/assets/img/team/team (9).png" alt="" data-name="Dr.Bibhu Prasad" data-bio="Convener">
+
+
+            </div>
+    </div>
+
+
+</div>
+
+<script>
+    // Create an Audio object with the path to your sound file
+    const audio = new Audio('/assets/music/gtasa.mp3');
+  
+    // Function to play the sound
+    // function playSound() {
+    //   audio.play();
+    // }
+  
+    // Attach the click event listener to the entire body
+    document.body.addEventListener('click', playSound);
+  
+  </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const largeImage = document.querySelector(".image-change img");
+        const detailsName = document.querySelector(".details h1");
+        const detailsBio = document.querySelector(".details h2");
+        const smallImages = document.querySelectorAll(".image-gallary img");
+
+        smallImages.forEach(function (smallImage) {
+            smallImage.addEventListener("click", function () {
+                // Change large image source
+                const newSrc = this.getAttribute("src");
+                largeImage.setAttribute("src", newSrc);
+
+                // Change details
+                const newName = this.getAttribute("data-name");
+                const newBio = this.getAttribute("data-bio");
+                detailsName.textContent = "" + newName;
+                detailsBio.textContent = newBio;
+            });
+        });
+    });
+</script>

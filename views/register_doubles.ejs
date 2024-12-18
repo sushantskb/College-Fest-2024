@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="/css/form.css" />
+<div id="page1">
+  <nav>
+    <a href="/"><img
+        class="magnet"
+        src="/assets/img/Shrujan final1.png"
+        width="160"
+        alt="shrujan logo"
+      />
+    </a>
+    <div id="nav-part2">
+      <h4><a class="magnet" href="/">Home</a></h4>
+      <h4><a class="magnet" href="#">Team</a></h4>
+      <h4><a class="magnet" href="#">Contact</a></h4>
+    </div>
+    <h3 style="color: #fff; filter: drop-shadow(1px 1px 1px black);"><i class="ri-menu-fill" style="padding-right: 10px;"></i></i>Menu</h3>
+</nav>
+
+
+  <% if(infoRegisterObj != "") { %>
+    <div class="success-message">
+      <%= infoRegisterObj %>
+    </div>
+  <% } %>
+
+  <% if(infoErrorObj != "") { %>
+    <div class="failure-message">
+      <%= infoErrorObj[0].message %>
+    </div>
+  <% } %>
+  <div class="background">
+    <div class="container">
+      <div class="screen">
+        <div class="screen-header">
+          <div class="screen-header-left">
+            <div class="screen-header-button close"></div>
+            <div class="screen-header-button maximize"></div>
+            <div class="screen-header-button minimize"></div>
+          </div>
+          <div class="screen-header-right">
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+          </div>
+        </div>
+        <div class="screen-body">
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <span>Register</span>
+              <span>Now</span>
+            </div>
+            <div class="app-contact" style="font-size: 2vw">
+              Event Name <%= eventName %>
+            </div>
+            <div class="app-contact" style="font-size: 2vw; color: royalblue;">Fees = <%= fees %> </div>
+            <!-- <div class="app-contact" style="font-size: 2vw;">Last Date : <%= eventData.registrationLastDate %></div> -->
+          </div>
+          <form method="post" action="/events/sports/doubles/<%= eventName %>">
+            <div class="screen-body-item">
+              <div class="app-form">
+                <input  name="_csrf" value="<%=csrfToken %>" hidden>
+                <div class="app-form-group">
+                  <input
+                    class="app-form-control"
+                    name="lname"
+                    placeholder="Lead Name"
+                    value="<%= userData.name %>"
+                    disabled
+                  />
+                </div>
+                <div class="app-form-group">
+                  <input
+                    class="app-form-control"
+                    name="lemail"
+                    placeholder="Lead Email"
+                    value="<%= userData.email %>"
+                    disabled
+                  />
+                </div>
+                <div class="app-form-group">
+                  <input
+                    class="app-form-control"
+                    name="lrollno"
+                    placeholder="Lead Roll No"
+                    value="<%= userData.rollno %>"
+                    disabled
+                  />
+                </div>
+                <div class="app-form-group">
+                  <input
+                    class="app-form-control"
+                    name="mroll"
+                    placeholder="Member Roll No"
+                    value=""
+                  />
+                </div>
+                <div class="app-form-group">
+                  <input
+                    class="app-form-control"
+                    name="lgender"
+                    placeholder="Lead Gender"
+                    value="<%= userData.gender %>"
+                    disabled
+                  />
+                </div>
+                <!-- <label
+                  for="payment"
+                  >Enter your payment screenshot</label
+                > -->
+                <% if(fees != "Free") { %>
+                  <div class="app-form-group">
+                    <!-- <input class="app-form-control" name="payApp" placeholder="Payment Application" value=""> -->
+                    <a class="app-form-button" style="text-decoration: none;" href="/assets/img/pay.jpg" download>Download QR</a>
+                    <select class="app-form-control" name="payApp" placeholder="Payment Application" required style="font-family: 'Montserrat', sans-serif;font-weight: 700;letter-spacing: 1.4px;">
+                      <option value="gpay" style="color:black;font-family: 'Montserrat', sans-serif;font-weight: 700;letter-spacing: 1.4px;">Gpay</option>
+                      <option value="phonePay" style="color:black;font-family: 'Montserrat', sans-serif;font-weight: 700;letter-spacing: 1.4px;">PhonePay</option>
+                      <option value="Paytm" style="color:black;font-family: 'Montserrat', sans-serif;font-weight: 700;letter-spacing: 1.4px;">Paytm</option>
+                      <option value="AmazonPay" style="color:black;font-family: 'Montserrat', sans-serif;font-weight: 700;letter-spacing: 1.4px;">AmazonPay</option>
+                    </select>
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" name="tid" placeholder="Transaction Id" value="" required>
+                  </div>
+                <% } %>
+                <div class="app-form-group buttons">
+                  <%- include('captcha'); -%>
+                  <button type="submit" class="app-form-button">
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

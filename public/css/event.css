@@ -1,0 +1,168 @@
+@font-face {
+  font-family: neu;
+  src: url(/assets/fonts/gtafont.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "neu";
+}
+
+*::selection {
+  color: #fff;
+  background-color: #000;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#page3 {
+  background: none;
+}
+
+#cursor {
+  height: 180px;
+  width: 180px;
+  background-color: rgba(224, 139, 189, 0.814);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+#page3 {
+  min-height: 120vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.child {
+  height: 54vh;
+  width: 38vw;
+  margin: 10px;
+  /* background-color: red; */
+  /* border: 2px solid #000; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.child img {
+  height: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.actions a {
+  padding: 10px; /* Adjust padding as needed */
+  margin: 5px; /* Adjust margin as needed */
+  font-size: 25px;
+  text-decoration: none;
+  color: #ffffff; /* Adjust text color as needed */
+  background-color: #ff00c8; /* Adjust background color as needed */
+  /* filter: drop-shadow(1px 1px 1px black); */
+  letter-spacing: 2px;
+  border: 1px solid #ffffff; /* Adjust border as needed */
+  border-radius: 5px; /* Adjust border-radius as needed */
+  text-align: center;
+  width: 40%; /* Adjust width as needed */
+  box-shadow: 2px 2px rgb(255, 255, 255);
+}
+
+.actions button {
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #740000;
+  display: inline-block;
+}
+
+.success-message,
+.failure-message {
+  max-width: 1000px;
+  /* Set the max-width as needed */
+  margin: 0 auto;
+  /* Center horizontally */
+  background: #58af58;
+  /* Green background color for success */
+  max-width: 1000px; /* Set the max-width as needed */
+  margin: 0 auto; /* Center horizontally */
+  background: #58af58; /* Green background color for success */
+  text-align: center;
+  font-size: 30px;
+  padding: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Center vertically */
+  color: #fff;
+  /* White text color */
+}
+
+.failure-message {
+  background: #f44336;
+  /* Red background color for failure */
+  align-items: center; /* Center vertically */
+  color: #fff; /* White text color */
+}
+
+.failure-message {
+  background: #f44336; /* Red background color for failure */
+}
+
+@media (max-width: 600px) {
+  #page3 {
+    min-height: 120vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .child {
+    height: 54vh;
+    width: 88vw;
+    /* background-color: red; */
+    /* border: 2px solid #000; */
+    position: relative;
+    padding: 15vw;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+  }
+
+  .child img {
+    height: 100%;
+  }
+
+  .actions {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .actions a,
+  .actions button {
+    width: 100%; /* Make the buttons take full width on smaller screens */
+    font-size: 25px;
+  }
+}

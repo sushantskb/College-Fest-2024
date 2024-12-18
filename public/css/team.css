@@ -1,0 +1,85 @@
+.team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 108vh;
+}
+
+.large-container {
+    position: relative;
+    max-width: 800px; /* Set your desired maximum width for larger screens */
+    width: 100%;
+    margin: 0 auto; /* Center the container */
+}
+
+.image-change {
+    position: relative;
+    width: 100%;
+	border-radius: 15%; /* Make the images round */
+    filter: drop-shadow(2px 4px 2px black);
+    background: rgb(255 255 255 / 25%);
+    border: 2px solid pink;
+    border-radius: 20px;
+}
+
+.image-change img{
+	height: 81vh;
+    margin: auto 144px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.details {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+	border-radius: 20px;
+}
+
+.round {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the circular container vertically */
+    margin-top: 20px; /* Add some space between the large container and the circular container */
+}
+
+.circular-container {
+    width: 120px; /* Set the width of the circular container */
+    height: 120px; /* Set the height of the circular container */
+    border-radius: 50%; /* Create a circular shape */
+    overflow: hidden; /* Hide overflow to keep it circular */
+}
+
+.image-gallary {
+    display: flex;
+    margin-top: 10px;
+}
+
+.image-gallary img {
+    max-width: 40px; /* Set your desired maximum width for small images */
+    height: auto;
+    cursor: pointer;
+    margin: 0px;
+    border-radius: 15%; /* Make the images round */
+    filter: drop-shadow(2px 4px 2px black);
+    background: rgb(255 255 255 / 25%);
+    border: 2px solid pink;
+    border-radius: 20px;
+}
+
+.image-gallary img:hover {
+    border: 2px solid #007bff;
+}
+
+@media only screen and (max-width: 600px) {
+	.image-change img{
+		margin: auto;
+	}
+}
